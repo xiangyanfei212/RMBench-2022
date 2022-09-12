@@ -1,0 +1,60 @@
+defaults:
+    - _self_
+    - task@_global_: place_brick
+    - override hydra/launcher: submitit_local
+
+# task settings
+task_name: place_brick 
+seed: 2 # 0~4
+device: cuda
+gpu_id: 1
+save_video: true
+use_tb: False 
+
+# train
+episodes: 200 # default: 500
+steps_per_episode: 2000 # default: 4000 
+max_ep_len: 500 # < steps_per_episode, default:1000
+lr: 1e-3
+save_freq: 10
+gamma: 0.99 # gamma (float): Discount factor. (Always between 0 and 1.)
+polyak: 0.995
+alpha: 0.2
+replay_size: 2000 # 1e6
+batch_size: 100 # 100
+start_steps: 0 # 10000
+update_after: 100 # 1000
+update_every: 10 # 50
+act_noise: 0.1
+num_test_episodes: 10
+
+# load pretrained model, continue train
+load_pretrain_model: true
+work_dir: /data1/xiangyf/24_DRL_manipulation_benchmark/06_TD3/exp_local/reassemble_5_bricks_random_order_seed_0/2022.08.08_075523 
+pretrain_seed: 0
+pretrain_episodes: 140
+
+# experiment
+experiment: exp
+
+# network
+obs_dim: ??? # to be specified later
+act_dim: ??? # to be specified later
+hidden_dim_1: 512
+hidden_dim_2: 256
+hidden_dim_3: 128 
+
+hydra:
+  run:
+    dir: ./exp_local/${task_name}_seed_${seed}/${now:%Y.%m.%d}_${now:%H%M%S}
+  sweep:
+    dir: ./exp/${now:%Y.%m.%d}/${now:%H%M}_${agent_cfg.experiment}
+    subdir: ${hydra.job.num}
+  launcher:
+    timeout_min: 4300
+    cpus_per_task: 4
+    gpus_per_node: 1
+    tasks_per_node: 1
+    mem_gb: 160
+    nodes: 1
+    submitit_folder: ./exp/${now:%Y.%m.%d}/${now:%H%M%S}_${agent_cfg.experiment}/.slurm

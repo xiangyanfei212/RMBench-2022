@@ -1,0 +1,8 @@
+default:
+    - easy
+    - _self_
+
+task_name: reassemble_5_bricks_random_order
+lr: 1e-4
+stddev_schedule: 'linear(1.0,0.1,500000)'
+num_train_frames: 3100000

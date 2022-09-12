@@ -1,0 +1,8 @@
+default:
+    - easy
+    - _self_
+
+task_name: stack_3_bricks
+lr: 1e-4
+stddev_schedule: 'linear(1.0,0.1,500000)'
+num_train_frames: 3100000

@@ -1,0 +1,6 @@
+default:
+    - easy
+    - _self_
+
+task_name: stack_2_of_3_bricks_random_order
+

@@ -1,0 +1,8 @@
+defaults:
+  - easy 
+  - _self_
+
+task_name: reach_site 
+lr: 1e-4
+stddev_schedule: 'linear(1.0,0.1,100000)'
+num_train_frames: 3100000

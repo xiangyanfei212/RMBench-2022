@@ -1,0 +1,5 @@
+default:
+    - easy
+    - _self_
+
+task_name: stack_2_bricks_moveable_base

@@ -1,0 +1,5 @@
+default:
+    - easy
+    - _self_
+
+task_name: ressemble_3_bricks_fixed_order

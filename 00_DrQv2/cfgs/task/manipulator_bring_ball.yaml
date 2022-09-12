@@ -1,0 +1,9 @@
+default:
+    - easy
+    - _self_
+
+task_name: manipulator_bring_ball
+lr: 8e-5
+stddev_schedule: 'linear(1.0,0.1,500000)'
+num_train_frames: 3100000
+
