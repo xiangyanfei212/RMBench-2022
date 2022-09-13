@@ -17,7 +17,7 @@ n this work, we present RMBench, the first benchmark for robotic manipulations, 
 
 ### Tasks
 
-![Manipulation tasks](.manipulation_tasks.png)
+![Manipulation tasks](./manipulation_tasks.png)
 
 
 We utilize [dm\_control](https://github.com/deepmind/dm_control) software package, which has task suites for reinforcement learning agents in an articulated-body simulation. We focus on the manipulation tasks with a 3D robotic arm, which can be divided into five categories: lifting, placing, reaching, stacking, and reassembling. They are described briefly below.
@@ -34,7 +34,6 @@ We utilize [dm\_control](https://github.com/deepmind/dm_control) software packag
         <td>Elevate a brick above a threshold height.</td>
     </tr>
     <tr>
-        <td></td>
         <td>Lift large box</td>
         <td>Elevate a large box above a threshold height. The box is too large to be grasped by the gripper, requiring non-prehensile manipulation.</td>
     </tr>
@@ -44,7 +43,6 @@ We utilize [dm\_control](https://github.com/deepmind/dm_control) software packag
         <td>Move the end effector to a target location in 3D space.</td>
     </tr>
     <tr>
-        <td></td>
         <td>Reach brick</td>
         <td>Move the end effector to a brick resting on the ground.</td>
     </tr>
@@ -54,7 +52,6 @@ We utilize [dm\_control](https://github.com/deepmind/dm_control) software packag
         <td>Place a brick inside a concave `cradle' situated on a pedestal.</td>
     </tr>
     <tr>
-        <td></td>
         <td>Place brick</td>
         <td>Place a brick on top of another brick that is attached to the top of a pedestal. Unlike the stacking tasks below, the two bricks are not required to be snapped together in order to obtain maximum reward.</td>
     </tr>
@@ -64,7 +61,6 @@ We utilize [dm\_control](https://github.com/deepmind/dm_control) software packag
         <td>Snap together two bricks, one of which is attached to the floor.</td>
     </tr>
     <tr>
-        <td></td>
         <td>Stack 2 bricks movable base</td>
         <td>Same as `stack 2 bricks', except both bricks are movable.</td>
     </tr>
@@ -82,31 +78,43 @@ We utilize [dm\_control](https://github.com/deepmind/dm_control) software packag
 - Download MuJoCo binaries [here](https://www.roboti.us/download.html). such as 'mujoco210\_linux.zip'
 - Unzip the downloaded archive into ~/.mujoco/mujoco210 
 
+```console
 $ mkdir ~/.mujoco/mujoco210
 $ cp mujoco210\_linux.zip ~/.mujoco/mujoco210 
 $ cd ~/.mujoco/mujoco210 
 $ unzip mujoco210\_linux.zip
+```
 
 - Place your license key file mjkey.txt at ~/.mujoco/mujoco210.
 
+```console
 $ cp mjkey.txt ~/.mujoco/mujoco210 
 $ cp mjkey.txt ~/.mujoco/mujoco210/mujoco210_linux/bin
+```
 
 - Add environment variables: Use the env variables MUJOCO\_PY\_MJKEY\_PATH and MUJOCO\_PY\_MUJOCO\_PATH to specify the MuJoCo license key path and the MuJoCo directory path. 
+```console
 $ export MUJOCO\_PY\_MJKEY\_PATH=$MUJOCO\_PY\_MJKEY\_PATH:~/.mujoco/mujoco210/mjkey.txt
 $ export MUJOCO\_PY\_MUJOCO\_PATH=$MUJOCO\_PY\_MUJOCO\_PATH:~/.mujoco/mujoco210/mujoco210\_linux
+```
 
 - Append the MuJoCo subdirectory bin path into the env variable LD\_LIBRARY\_PATH.
+```console
 $ export LD\_LIBRARY\_PATH=$LD\_LIBRARY\_PATH:~/.mujoco/mujoco210/bin 
+```
 
 2. Install the required python library
-pip install -r requirements.txt
+```console
+$ pip install -r requirements.txt
+```
 
 ## How to run？
 
 For example, we want to train agents using DrQ-v2 algorithms for 'reaching site' tasks:
+```console
 $ cd 00\_DrQv2
 $ python drqv2_train.py task=reach_site
+```
 
 ## Acknowledgements
 
