@@ -120,6 +120,8 @@ $ python drqv2_train.py task=reach_site
 
 ## Some Results
 
+When the training process finishes, you can use 'plot\_curve.py' to plot the curves of rewards.
+
 ![Manipulation tasks](./assets/curve_7_algo_2.png)
 
 
