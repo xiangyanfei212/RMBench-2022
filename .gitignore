@@ -5,6 +5,5 @@ img/
 *.csv
 view.py
 plot_band.py
-plot_curve.py
 plot_bar.py
 nohup.out
