@@ -1,9 +1,11 @@
 # RMBench-2022
 
 
-## Brief Intro
+## Brief Introduction
 
-n this work, we present RMBench, the first benchmark for robotic manipulations, which have high-dimensional continuous action and state spaces. We implement and evaluate reinforcement learning algorithms that directly use observed pixels as inputs.
+In this work, we present RMBench, the first benchmark for robotic manipulations, which have high-dimensional continuous action and state spaces. We implement and evaluate reinforcement learning algorithms that directly use observed pixels as inputs.
+
+This repository is the official implementation of our paper: Y. Xiang et al., “RMBench: Benchmarking Deep Reinforcement Learning for Robotic Manipulator Control,” Oct. 2022, doi: 10.48550/arXiv.2210.11262.
 
 ### RL algirithms
 
@@ -17,7 +19,7 @@ n this work, we present RMBench, the first benchmark for robotic manipulations, 
 
 ### Tasks
 
-![Manipulation tasks](./manipulation_tasks.png)
+![Manipulation tasks](./assets/manipulation_tasks.png)
 
 
 We utilize [dm\_control](https://github.com/deepmind/dm_control) software package, which has task suites for reinforcement learning agents in an articulated-body simulation. We focus on the manipulation tasks with a 3D robotic arm, which can be divided into five categories: lifting, placing, reaching, stacking, and reassembling. They are described briefly below.
@@ -115,6 +117,11 @@ For example, we want to train agents using DrQ-v2 algorithms for 'reaching site'
 $ cd 00\_DrQv2
 $ python drqv2_train.py task=reach_site
 ```
+
+## Some Results
+
+![Manipulation tasks](./assets/curve_7_algo_2.pdf)
+
 
 ## Acknowledgements
 
