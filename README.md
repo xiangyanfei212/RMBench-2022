@@ -129,4 +129,19 @@ When the training process finishes, you can use 'plot\_curve.py' to plot the cur
 
 Part of this code is inspired by [SpinningUp2018](https://spinningup.openai.com/en/latest/spinningup/rl_intro.html) and [DrQ-v2](https://github.com/facebookresearch/drqv2)
 
+## Citation
 
+Please kindly consider citing our paper in your publications.
+
+```
+@misc{https://doi.org/10.48550/arxiv.2210.11262,
+      doi = {10.48550/ARXIV.2210.11262},
+      url = {https://arxiv.org/abs/2210.11262},
+      author = {Xiang, Yanfei and Wang, Xin and Hu, Shu and Zhu, Bin and Huang, Xiaomeng and Wu, Xi and Lyu, Siwei},
+      keywords = {Robotics (cs.RO), Artificial Intelligence (cs.AI), FOS: Computer and information sciences, FOS: Computer and information sciences},
+      title = {RMBench: Benchmarking Deep Reinforcement Learning for Robotic Manipulator Control},
+      publisher = {arXiv},
+      year = {2022},
+      copyright = {arXiv.org perpetual, non-exclusive license}
+}
+```
