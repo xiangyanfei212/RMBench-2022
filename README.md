@@ -120,7 +120,7 @@ $ python drqv2_train.py task=reach_site
 
 ## Some Results
 
-![Manipulation tasks](./assets/curve_7_algo_2.pdf)
+![Manipulation tasks](./assets/curve_7_algo_2.png)
 
 
 ## Acknowledgements
